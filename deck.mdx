@@ -1,0 +1,107 @@
+import { Image } from "mdx-deck";
+import { Invert } from "mdx-deck/layouts";
+// export { swiss as theme } from "mdx-deck/themes";
+// export { notes as theme } from "mdx-deck/themes";
+// export { syntaxHighlighterPrism as theme } from "mdx-deck/themes";
+//
+// If needed:
+// https://github.com/pomber/code-surfer => highlight/zoom code snippet
+// https://github.com/JReinhold/mdx-deck-live-code => live coding
+//
+// Docs:
+// https://github.com/jxnblk/mdx-deck/blob/master/docs/components.md
+//
+// WHY: You can **hack** your own problems!
+
+export default Invert;
+
+# Drawing Git Graphs in the Browser
+
+---
+
+This is the story of a problem I had.
+
+---
+
+<Image src="./images/1-us.jpg" />
+
+---
+
+Business school. Git presentations.
+
+---
+
+Git graphs in slides are a pain in the ass.
+
+---
+
+When you have a crazy idea in mind… do it.
+
+You can **hack** your own problems!
+
+---
+
+v1 was awesome:
+
+- git API drawing graph in browser Canvas
+- highly customisable
+- no dependency
+- fun website
+
+---
+
+Then, you have to maintain.
+
+---
+
+Modelling of v1 was good, but not good enough.
+
+---
+
+No test. How to test such a thing?
+
+---
+
+An OK execution is better than a perfect idea.
+
+Hack your way out of your problem.
+
+---
+
+Fabien started v2:
+
+- distinct the rendering part from the calculation part (core)
+- TDD the core!
+- modularity & types with TypeScript (better DX)
+
+---
+
+He did the POC. I was leaving for Montréal, Canada.
+
+**Weekly remote pair-programming!**
+
+---
+
+We built the new lib slowly. We didn't have to rush (not an urgent problem).
+
+---
+
+v2 is out!
+
+---
+
+export default Invert;
+
+# New section
+
+---
+
+```jsx
+<CodeSnippet />
+```
+
+---
+
+import Demo from "./components/Demo";
+
+# <Demo />

@@ -1,0 +1,16 @@
+{
+  "name": "nicoespeon",
+  "version": "1.0.0",
+  "description": "Slides of my talk \"Drawing Git Graphs in the Browser\"",
+  "main": "",
+  "author": "Nicolas Carlo <nicolascarlo.espeon@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  },
+  "devDependencies": {
+    "mdx-deck": "^2.0.0",
+    "react": "^16.8.4"
+  }
+}
