@@ -13,6 +13,20 @@ import { Invert } from "mdx-deck/layouts";
 //
 // WHY: You can **hack** your own problems!
 
+---
+
+Cover
+
+---
+
+Me.
+
+---
+
+Busbud.
+
+---
+
 export default Invert;
 
 # Drawing Git Graphs in the Browser
@@ -27,11 +41,27 @@ This is the story of a problem I had.
 
 ---
 
-Business school. Git presentations.
+Business school.
 
 ---
 
-Git graphs in slides are a pain in the ass.
+Git classes = need to show git graphs.
+
+---
+
+Git graphs in slides are a pain in the ass!
+
+---
+
+Git graphs on web page are a pain in the ass!
+
+---
+
+nvdie inspiration: beautiful! But Keynote based = Pain in the ass to maintain.
+
+---
+
+Discussing at swimming pool: what if…
 
 ---
 
@@ -41,12 +71,21 @@ You can **hack** your own problems!
 
 ---
 
+Fabien had a POC. We worked on it until v1. It was awesome!
+
+---
+
+Demo of v1 usage.
+
+---
+
 v1 was awesome:
 
 - git API drawing graph in browser Canvas
 - highly customisable
-- no dependency
-- fun website
+- no dependency (vanity metric)
+- open-source
+- fun website => show it!
 
 ---
 
@@ -54,11 +93,27 @@ Then, you have to maintain.
 
 ---
 
-Modelling of v1 was good, but not good enough.
+How do you deal with issues? With PRs?
+
+---
+
+Not really using it anymore => slow updates.
+
+---
+
+Modelling of v1 was good, but not good enough. Hard to implement features (import from JSON, branch labels…).
 
 ---
 
 No test. How to test such a thing?
+
+---
+
+Fabien is the hacker. I'm the doer. (Metidia image)
+
+---
+
+Maintaining cost more and more as you should not break existing stuff.
 
 ---
 
@@ -68,11 +123,31 @@ Hack your way out of your problem.
 
 ---
 
-Fabien started v2:
+In 2017, it was time to move from v1. We want:
+
+- tests
+- better separation of responsibilities
+- types & modern tooling
+
+---
+
+Fabien started v2 (he's the doer, be like Fabien).
+
+--
+
+Features:
 
 - distinct the rendering part from the calculation part (core)
 - TDD the core!
 - modularity & types with TypeScript (better DX)
+
+---
+
+Structure we designed:
+
+- core
+- react, using SVG rendering
+- eventually others: angular, vanilla JS, vue.js… node.js!
 
 ---
 
@@ -82,7 +157,24 @@ He did the POC. I was leaving for Montréal, Canada.
 
 ---
 
-We built the new lib slowly. We didn't have to rush (not an urgent problem).
+You'd be surprised how efficient pair-programming + TDD could be, even in ~30min of code.
+
+---
+
+We built v2 slowly like that, over 1 year.
+
+---
+
+Fun facts for you:
+
+- How to be efficient for remote pair-programming
+- Prettier to ease your life
+- SVG rendering of arrow (maths)
+- SVG rendering of tooltips (maths & how to keep it readable)
+- SVG rendering of commits dots (fun with browser stroke)
+- How to ease maintenance of multiple packages (tips for monorepo)
+- How to maintain 2 really different versions of the codebase? (git worktree)
+- Private stuff in TS appear as public in JS version + Intellisense!
 
 ---
 
