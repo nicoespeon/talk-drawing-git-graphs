@@ -1,7 +1,9 @@
-import { Image } from "mdx-deck";
-import { Invert } from "mdx-deck/layouts";
+import { Image, Appear } from "mdx-deck";
+import { Invert, Split, SplitRight } from "mdx-deck/layouts";
+import KeyIdea from "./KeyIdeaLayout";
+import Todo from "./TodoLayout";
 // export { swiss as theme } from "mdx-deck/themes";
-// export { notes as theme } from "mdx-deck/themes";
+export { notes as theme } from "mdx-deck/themes";
 // export { syntaxHighlighterPrism as theme } from "mdx-deck/themes";
 //
 // If needed:
@@ -11,29 +13,44 @@ import { Invert } from "mdx-deck/layouts";
 // Docs:
 // https://github.com/jxnblk/mdx-deck/blob/master/docs/components.md
 //
-// WHY: You can **hack** your own problems!
+// WHY of the talk: You can **hack** your own problems!
+//
+// Shortcuts:
+// - Option + P => presenter mode
+// - Option + O => overview mode
+// - Option + G => grid mode
+
+<Image src="./images/0-cover.png" size={"contain"} />
 
 ---
 
-Cover
+export default Split;
+
+![](./images/me.png)
+
+# Nicolas Carlo
+
+## _@nicoespeon_
 
 ---
 
-Me.
+export default Split;
 
----
+![](./images/busbud.png)
 
-Busbud.
+## 80 countries
+
+![](./images/busbud-bus-with-trip.png)
 
 ---
 
 export default Invert;
 
-# Drawing Git Graphs in the Browser
+# Drawing Git Graphs<br />in the Browser
 
 ---
 
-This is the story of a problem I had.
+## This is the story of a problem I had
 
 ---
 
@@ -41,89 +58,114 @@ This is the story of a problem I had.
 
 ---
 
-Business school.
+export default Split;
+
+![](./images/2-tem.png)
+
+![](./images/2-tem-map.png)
 
 ---
 
-Git classes = need to show git graphs.
+![](./images/3-git.png)
+
+## We were teaching git to engineers
 
 ---
 
-Git graphs in slides are a pain in the ass!
+# The problem I had
+
+Drawing git graphs in slides are a pain in the ass! 😭
 
 ---
 
-Git graphs on web page are a pain in the ass!
+export default Split;
+
+![](./images/4-gitflow.png)
+
+## 😍
+
+Source: [nvie.com](https://nvie.com/posts/a-successful-git-branching-model/)
+
+<Appear>
+  <p>
+    But it's <u>painful</u> to maintain
+  </p>
+</Appear>
 
 ---
 
-nvdie inspiration: beautiful! But Keynote based = Pain in the ass to maintain.
+## _"I wish we would a JS library to draw git graphs in the browser!"_ — Nicolas 🏖
 
 ---
 
-Discussing at swimming pool: what if…
+## _"Hold my beer!"_ — Fabien 🍺
 
 ---
 
-When you have a crazy idea in mind… do it.
+export default KeyIdea;
 
-You can **hack** your own problems!
+## You can **hack** your own problems!
 
----
-
-Fabien had a POC. We worked on it until v1. It was awesome!
+When you have a crazy idea in mind, <u>do it</u>
 
 ---
 
-Demo of v1 usage.
+export default Invert;
+
+# Gitgraph.js v1
 
 ---
 
-v1 was awesome:
+export default Todo;
 
-- git API drawing graph in browser Canvas
-- highly customisable
-- no dependency (vanity metric)
-- open-source
-- fun website => show it!
+TK: Demo of v1 usage
 
 ---
 
-Then, you have to maintain.
+# v1 was awesome 🌈
+
+- solved our problem
+- highly customizable
+- no dependency, 6.3kB gzipped
+- we had fun 🎷
 
 ---
 
-How do you deal with issues? With PRs?
+# We learned crazy stuff
+
+[json2tsd](https://github.com/nicoespeon/gitgraph.js/blob/gitgraph.js/scripts/json2tsd.test.js) > generate TS types from code documentation
 
 ---
 
-Not really using it anymore => slow updates.
+export default Invert;
+
+# Then, you have to maintain
 
 ---
 
-Modelling of v1 was good, but not good enough. Hard to implement features (import from JSON, branch labels…).
+## 🤔
+
+- How do you deal with issues? With PRs?
+- Modelling made some features hard to implement
+- No test. How to test a rendering lib?
 
 ---
 
-No test. How to test such a thing?
+export default Invert;
+
+<Image src="./images/5-metidia.jpg" size={"contain"} />
 
 ---
 
-Fabien is the hacker. I'm the doer. (Metidia image)
+export default KeyIdea;
+
+## Hack your way out of your problem
+
+An _OK execution_ is better than a _perfect idea_
 
 ---
 
-Maintaining cost more and more as you should not break existing stuff.
-
----
-
-An OK execution is better than a perfect idea.
-
-Hack your way out of your problem.
-
----
-
-In 2017, it was time to move from v1. We want:
+## But, still… We want:
 
 - tests
 - better separation of responsibilities
@@ -131,69 +173,218 @@ In 2017, it was time to move from v1. We want:
 
 ---
 
-Fabien started v2 (he's the doer, be like Fabien).
+export default Invert;
 
---
+# Time for v2
 
-Features:
+---
 
-- distinct the rendering part from the calculation part (core)
+## What would be different
+
+- distinct the rendering from the calculation (core)
 - TDD the core!
-- modularity & types with TypeScript (better DX)
+- modularity & types with TypeScript
 
 ---
 
-Structure we designed:
+## 👷 New architecture
 
-- core
-- react, using SVG rendering
-- eventually others: angular, vanilla JS, vue.js… node.js!
+```
+              +----------------+
+         +----| @gitgraph/core |-----+
+         |    +----------------+     |
+         v                           v
++-----------------+           +--------------+
+| @gitgraph/react |           | @gitgraph/js |
++-----------------+           +--------------+
+```
 
 ---
 
-He did the POC. I was leaving for Montréal, Canada.
+## 🇨🇦 <-> 🇩🇪
 
 **Weekly remote pair-programming!**
 
 ---
 
-You'd be surprised how efficient pair-programming + TDD could be, even in ~30min of code.
+### 🏗 We built v2 over 1 year
 
----
-
-We built v2 slowly like that, over 1 year.
-
----
-
-Fun facts for you:
-
-- How to be efficient for remote pair-programming
-- Prettier to ease your life
-- SVG rendering of arrow (maths)
-- SVG rendering of tooltips (maths & how to keep it readable)
-- SVG rendering of commits dots (fun with browser stroke)
-- How to ease maintenance of multiple packages (tips for monorepo)
-- How to maintain 2 really different versions of the codebase? (git worktree)
-- Private stuff in TS appear as public in JS version + Intellisense!
-
----
-
-v2 is out!
+![](./images/6-building-v2.png)
 
 ---
 
 export default Invert;
 
-# New section
+# What I learnt in the process
 
 ---
 
-```jsx
-<CodeSnippet />
-```
+## 💬 Pair-programming ease communication
+
+---
+
+## Our weekly session
+
+- 15min of _"how are you doing dude?!"_
+- 5min of _"here's the next challenge to solve"_
+- 40min of achieving the challenge, no matter what
+
+---
+
+export default Split;
+
+![](./images/7-uncle-bens.jpg)
+
+## Our recipe (TDD)
+
+1. Write a failing test
+1. Write the <u>simplest</u> code to make the test pass
+1. Refactor the code
+
+---
+
+## ✅ TDD and types are super-effective
+
+---
+
+## 🤖 Automate the non-important stuff
+
+Formatting is for Prettier. Stop wasting time.
+
+---
+
+export default Split;
+
+![](./images/8-lerna.png)
+
+## Simplifies packages management
+
+Monorepo ≠ Monolith
+
+---
+
+![](./images/9-packages.png)
+
+---
+
+`lerna bootstrap | publish | …`
+
+![](./images/9-lerna-publish.png)
+
+---
+
+<Image src="./images/9-gitgraph-react.png" size={"contain"} />
+
+---
+
+## 🛣 `git worktree`
+
+- Checkout more than one branch at a time
+- Synced to the same git repository
+
+---
+
+<Image src="./images/10-git-worktree.png" size={"contain"} />
+
+---
+
+### `git commit --allow-empty`
+
+👌 simulate commits without bothering with changes
+
+---
+
+![](./images/11-think-about-it.gif)
+
+## Useful to trigger the CI
+
+---
+
+![](./images/12-storybook.png)
+&nbsp;
+![](./images/12-chromatic.jpg)
+
+E2E tests of rendering libs in **Storybook**
+
+Visual regression test with **Chromatic QA**
+
+---
+
+<Image src="./images/12-gitgraph-stories.png" size={"contain"} />
+
+---
+
+<Image src="./images/12-chromatic-workflow.png" size={"contain"} />
+
+---
+
+<Image src="./images/12-chromatic-changes.png" size={"contain"} />
+
+---
+
+<Image src="./images/12-chromatic-diff.png" size={"contain"} />
+
+---
+
+<Image src="./images/12-chromatic-pr.png" size={"contain"} />
+
+---
+
+export default Split;
+
+![](./images/13-zen-dog.jpg)
+
+Learning is a journey, not a destination
+
+---
+
+export default KeyIdea;
+
+## Don't wait, **hack** your own problems!
+
+You will learn <u>a lot</u> in the process
+
+---
+
+export default Invert;
+
+# v2 is out!
+
+---
+
+## 💁‍ What's in there
+
+- 2 rendering libs: _@gitgraph/js_ & _@gitgraph/react_
+- Give you a git-like API
+- Render SVG graph in the browser
+- Types, tests & stories
+
+---
+
+export default Todo;
+
+TK: demo of `@gitgraph/react` usage
+
+---
+
+export default KeyIdea;
+
+## You have an idea in mind?
+
+Just do it. It doesn't have to be perfect.
+
+---
+
+# 🙏 Thank you
+
+[github.com/nicoespeon/gitgraph.js/](https://github.com/nicoespeon/gitgraph.js/)
+
+<!--
 
 ---
 
 import Demo from "./components/Demo";
 
 # <Demo />
+
+-->
