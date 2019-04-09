@@ -1,26 +1,10 @@
 import { Image, Appear } from "mdx-deck";
 import { Invert, Split, SplitRight } from "mdx-deck/layouts";
+export { theme } from "./theme";
 import KeyIdea from "./KeyIdeaLayout";
 import Todo from "./TodoLayout";
-// export { swiss as theme } from "mdx-deck/themes";
-export { notes as theme } from "mdx-deck/themes";
-// export { syntaxHighlighterPrism as theme } from "mdx-deck/themes";
-//
-// If needed:
-// https://github.com/pomber/code-surfer => highlight/zoom code snippet
-// https://github.com/JReinhold/mdx-deck-live-code => live coding
-//
-// Docs:
-// https://github.com/jxnblk/mdx-deck/blob/master/docs/components.md
-//
-// WHY of the talk: You can **hack** your own problems!
-//
-// Shortcuts:
-// - Option + P => presenter mode
-// - Option + O => overview mode
-// - Option + G => grid mode
 
-<Image src="./images/0-cover.png" size={"contain"} />
+<Image src="./images/0-cover.png" size={"contain"} />;
 
 ---
 
@@ -133,7 +117,7 @@ TK: Demo of v1 usage
 
 # We learned crazy stuff
 
-[json2tsd](https://github.com/nicoespeon/gitgraph.js/blob/gitgraph.js/scripts/json2tsd.test.js) > generate TS types from code documentation
+[json2tsd](https://github.com/nicoespeon/gitgraph.js/blob/gitgraph.js/scripts/json2tsd.test.js) > generate TS types from code docs
 
 ---
 
@@ -361,9 +345,9 @@ export default Invert;
 
 ---
 
-export default Todo;
+import PlaygroundV2 from "./components/PlaygroundV2";
 
-TK: demo of `@gitgraph/react` usage
+# <PlaygroundV2 />
 
 ---
 
@@ -378,13 +362,3 @@ Just do it. It doesn't have to be perfect.
 # 🙏 Thank you
 
 [github.com/nicoespeon/gitgraph.js/](https://github.com/nicoespeon/gitgraph.js/)
-
-<!--
-
----
-
-import Demo from "./components/Demo";
-
-# <Demo />
-
--->
