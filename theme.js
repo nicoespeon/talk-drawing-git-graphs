@@ -34,6 +34,11 @@ export const theme = {
       textAlign: "left",
       display: "block",
       marginLeft: 65
+    },
+    iframe: {
+      width: "100vw",
+      height: "100vh",
+      border: 0
     }
   },
   pre: {

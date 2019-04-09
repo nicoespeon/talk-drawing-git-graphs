@@ -12,7 +12,9 @@ export default function PlaygroundV2() {
   return (
     <LiveCode
       size="fullscreen"
-      code={`<Gitgraph>
+      code={`// import { Gitgraph, … } from "@gitgraph/react";
+
+<Gitgraph>
   {gitgraph => {
   }}
 </Gitgraph>`}
