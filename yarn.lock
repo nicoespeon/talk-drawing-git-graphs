@@ -864,15 +864,15 @@
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.3.tgz#6310a047f12d21a1036fb031317219892440416f"
 
-"@gitgraph/core@1.1.0-5":
-  version "1.1.0-5"
-  resolved "https://registry.yarnpkg.com/@gitgraph/core/-/core-1.1.0-5.tgz#34e0a800f804ac5c629aa7500337ca3e6df9e1e2"
+"@gitgraph/core@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@gitgraph/core/-/core-1.1.0.tgz#ff99e7624e1242f7fbacc95f6d78233b2270769a"
 
-"@gitgraph/react@^1.1.0-7":
-  version "1.1.0-7"
-  resolved "https://registry.yarnpkg.com/@gitgraph/react/-/react-1.1.0-7.tgz#b095a0ab4f2feeac938a46c81edef13862bfaab7"
+"@gitgraph/react@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@gitgraph/react/-/react-1.1.0.tgz#1d2b1961b7358e293a54e430e6ccea4d6be14c3c"
   dependencies:
-    "@gitgraph/core" "1.1.0-5"
+    "@gitgraph/core" "1.1.0"
 
 "@mdx-js/mdx@^0.15.7":
   version "0.15.7"

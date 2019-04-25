@@ -15,7 +15,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
-    "@gitgraph/react": "^1.1.0-7",
+    "@gitgraph/react": "^1.1.0",
     "gh-pages": "^2.0.1",
     "mdx-deck": "^1.7.7",
     "mdx-deck-live-code": "^1.0.1",
