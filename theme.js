@@ -23,6 +23,9 @@ export const theme = {
     "@media screen and (min-width:64em)": {
       fontSize: "2.5em"
     },
+    "@media screen and (min-width:100em)": {
+      fontSize: "3.3em"
+    },
     "@media print": {
       fontSize: "40px"
     },
